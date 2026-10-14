@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const BRAND = "Next Byte IT"; 
+const BRAND = "NextByteIT"; 
 
 
 const links = [
@@ -21,7 +21,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // scroll korle navbar-e blur + border ashbe
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -29,7 +28,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // page change hole mobile menu bondho
   useEffect(() => setOpen(false), [pathname]);
 
   const isActive = (href: string) =>

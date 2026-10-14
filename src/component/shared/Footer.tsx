@@ -28,7 +28,6 @@ const Footer = () => {
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_100%,rgba(99,102,241,0.18),transparent_70%),radial-gradient(40%_40%_at_85%_100%,rgba(34,211,238,0.14),transparent_70%)] dark:bg-[radial-gradient(60%_50%_at_50%_100%,rgba(99,102,241,0.28),transparent_70%),radial-gradient(40%_40%_at_85%_100%,rgba(34,211,238,0.20),transparent_70%)]"
       />
 
-      {/* Background: oversized wordmark, sits behind the links */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-50 -z-10 select-none whitespace-nowrap text-center text-[17vw] font-extrabold leading-none tracking-tighter text-transparent bg-gradient-to-b from-indigo-500/25 via-indigo-500/10 to-transparent bg-clip-text translate-y-[8%] dark:from-cyan-300/25 dark:via-indigo-400/10"
