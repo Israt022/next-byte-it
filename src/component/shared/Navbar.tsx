@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Link
-            href="/contact"
+            href="#contact"
             className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:bg-white dark:text-slate-900 dark:hover:bg-cyan-300"
           >
             Start a project
