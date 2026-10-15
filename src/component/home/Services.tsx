@@ -1,6 +1,10 @@
+
+"use client";
+
 import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
-import Reveal from "../shared/Reveal";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const Icon = ({ children }: { children: ReactNode }) => (
   <svg
@@ -20,19 +24,23 @@ const Icon = ({ children }: { children: ReactNode }) => (
 
 const services = [
   {
-    title: "Web development",
+    number: "01",
+    title: "Web Development",
     text: "Fast, secure websites, web apps and dashboards built with modern frameworks like Next.js and React.",
     href: "/services/web-development",
     icon: (
       <Icon>
         <rect x="3" y="4" width="18" height="16" rx="2" />
         <path d="M3 9h18" />
+        <path d="m9 14-2 2 2 2" />
+        <path d="m15 14 2 2-2 2" />
       </Icon>
     ),
   },
   {
-    title: "Mobile app development",
-    text: "Native-quality iOS and Android apps, built from a single codebase and ready for the app stores.",
+    number: "02",
+    title: "Mobile App Development",
+    text: "Intuitive mobile experiences designed for modern devices and everyday use.",
     href: "/services/mobile-apps",
     icon: (
       <Icon>
@@ -42,8 +50,9 @@ const services = [
     ),
   },
   {
-    title: "UI/UX design",
-    text: "Clear, user-friendly interfaces, from first wireframes to a complete design system.",
+    number: "03",
+    title: "UI/UX Design",
+    text: "Thoughtful interfaces and user-focused experiences, from wireframes to polished designs.",
     href: "/services/ui-ux-design",
     icon: (
       <Icon>
@@ -53,8 +62,9 @@ const services = [
     ),
   },
   {
+    number: "04",
     title: "Cloud & DevOps",
-    text: "Secure cloud infrastructure with automated deployment, monitoring and scaling.",
+    text: "Reliable infrastructure, automated deployment and scalable cloud solutions.",
     href: "/services/cloud-devops",
     icon: (
       <Icon>
@@ -63,93 +73,147 @@ const services = [
     ),
   },
   {
-    title: "AI & automation",
-    text: "Chatbots, workflow automation and data tools that save your team hours every week.",
+    number: "05",
+    title: "AI & Automation",
+    text: "Practical AI-powered tools and automated workflows that simplify everyday work.",
     href: "/services/ai-solutions",
     icon: (
       <Icon>
-        <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z" />
-        <path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7Z" />
+        <path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9Z" />
+        <path d="m19 15 .7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7Z" />
       </Icon>
     ),
   },
   {
-    title: "Support & maintenance",
-    text: "Regular updates, bug fixes and monitoring after launch, so your software keeps running smoothly.",
+    number: "06",
+    title: "Support & Maintenance",
+    text: "Ongoing updates, bug fixes and maintenance to keep your digital products running smoothly.",
     href: "/services/support-maintenance",
     icon: (
       <Icon>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="M9 12l2 2 4-4" />
+        <path d="m9 12 2 2 4-4" />
       </Icon>
     ),
   },
 ];
 
-const Services = () => {
+export default function Services() {
+  const reduce = useReducedMotion();
+
   return (
     <section
       id="services"
-      className="scroll-mt-16 bg-slate-100 py-20 sm:py-24 dark:bg-slate-900"
+      className="scroll-mt-16 bg-slate-100 py-14 sm:py-16 lg:py-20 dark:bg-slate-950"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
-            Our services
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            End-to-end IT and software solutions for startups and growing
-            businesses.
-          </p>
-        </Reveal>
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* Section Heading */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.25 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-9 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between"
+        >
+          <div className="max-w-2xl">
+            <p className="mb-3 flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-cyan-700 dark:text-cyan-300 sm:text-sm">
+              <span className="h-px w-8 bg-cyan-500" />
+              WHAT WE DO
+            </p>
 
-        {/* Grid */}
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <li key={s.title}>
-              <Reveal delay={(i % 3) * 0.1} className="h-full">
-                <Link
-                  href={s.href}
-                  className="group flex h-full flex-col rounded-xl border border-slate-200 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-white/10 dark:bg-slate-800/60 dark:shadow-none dark:hover:border-cyan-300/40"
-                >
-                  <span className="grid h-12 w-12 place-items-center rounded-lg bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-600 group-hover:text-white dark:bg-indigo-500/10 dark:text-cyan-300 dark:group-hover:bg-cyan-300 dark:group-hover:text-slate-900">
-                    {s.icon}
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+              Technology built{" "}
+              <span className="text-cyan-600 dark:text-cyan-300">
+                around your vision.
+              </span>
+            </h2>
+          </div>
+
+          <p className="max-w-md text-sm leading-6 text-slate-600 sm:text-base sm:leading-7 md:pb-1 dark:text-slate-400">
+            From the first idea to the final launch, we create digital
+            solutions that help businesses move forward.
+          </p>
+        </motion.div>
+
+        {/* Compact Service Grid */}
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <motion.li
+              key={service.number}
+              initial={reduce ? false : { opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.12 }}
+              transition={{
+                duration: 0.45,
+                delay: reduce ? 0 : (index % 3) * 0.08,
+                ease: "easeOut",
+              }}
+              className="min-w-0"
+            >
+              <Link
+                href={service.href}
+                className="group flex h-full min-h-[220px] flex-col rounded-xl border border-slate-200 bg-white p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-slate-900/5 sm:min-h-[225px] sm:p-5 dark:border-white/10 dark:bg-slate-900/70 dark:hover:border-cyan-300/40 dark:hover:shadow-black/20"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-cyan-50 text-cyan-700 transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-white dark:bg-cyan-300/10 dark:text-cyan-300 dark:group-hover:bg-cyan-300 dark:group-hover:text-slate-950">
+                    {service.icon}
                   </span>
 
-                  <h3 className="mt-6 font-display text-lg font-semibold text-slate-900 dark:text-white">
-                    {s.title}
+                  <span className="font-mono text-xs text-slate-400 transition-colors group-hover:text-cyan-600 dark:text-slate-600 dark:group-hover:text-cyan-300">
+                    / {service.number}
+                  </span>
+                </div>
+
+                <div className="mt-5 flex flex-1 flex-col">
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-cyan-700 dark:text-white dark:group-hover:text-cyan-300">
+                    {service.title}
                   </h3>
 
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                    {s.text}
+                  <p className="mt-2 flex-1 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                    {service.text}
                   </p>
 
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-cyan-300">
-                    Learn more
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                      className="transition-transform duration-200 group-hover:translate-x-1"
-                    >
-                      <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                  </span>
-                </Link>
-              </Reveal>
-            </li>
+                  <div className="mt-4 flex items-center justify-between border-t border-slate-200/80 pt-3 dark:border-white/10">
+                    <span className="text-xs font-semibold text-slate-600 transition-colors group-hover:text-cyan-700 sm:text-sm dark:text-slate-300 dark:group-hover:text-cyan-300">
+                      Explore service
+                    </span>
+
+                    <ArrowUpRight
+                      size={18}
+                      className="text-slate-400 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-cyan-600 dark:group-hover:text-cyan-300"
+                    />
+                  </div>
+                </div>
+              </Link>
+            </motion.li>
           ))}
         </ul>
+
+        {/* Compact Contact Link */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="mt-6 flex flex-col gap-3 rounded-xl border border-slate-200 bg-slate-200/60 px-5 py-4 sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:bg-white/[0.03]"
+        >
+          <p className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+            <Sparkles
+              size={17}
+              className="shrink-0 text-cyan-600 dark:text-cyan-300"
+            />
+            Have a project in mind? Let&apos;s talk.
+          </p>
+
+          <Link
+            href="/#contact"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-900 dark:text-cyan-300 dark:hover:text-white"
+          >
+            Discuss Your Project
+            <ArrowUpRight size={17} />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default Services;
+}
