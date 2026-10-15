@@ -85,46 +85,45 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Right: Personal introduction */}
+          {/* Right: Company Introduction */}
           <Reveal delay={0.12}>
             <div className="pt-2 lg:pt-0">
               <p className="text-sm font-medium text-cyan-700 dark:text-cyan-300">
-                Hello, I&apos;m Israt Jahan Era.
+                About NextByteIT
               </p>
 
               <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
-                I turn ideas into
+                Building digital solutions
                 <span className="text-cyan-700 dark:text-cyan-300">
-                  {" "}things people can use.
+                  {" "}that move businesses forward.
                 </span>
               </h2>
 
               <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-400">
-                I&apos;m a web developer passionate about creating
-                responsive, accessible, and thoughtful digital experiences.
-                I enjoy turning ideas into practical applications with
-                clean interfaces and reliable functionality.
+                NextByteIT focuses on creating modern websites and web
+                applications that combine thoughtful design with reliable
+                functionality. Every solution is designed to deliver a
+                seamless experience across devices.
               </p>
 
               <p className="mt-4 text-base leading-8 text-slate-600 dark:text-slate-400">
-                My journey spans frontend development and backend
-                fundamentals. I&apos;m continuously learning, experimenting
-                with modern technologies, and improving my skills by
-                building projects that solve real problems.
+                From intuitive user interfaces to scalable backend systems,
+                the goal is to transform ideas into practical digital products
+                using modern technologies and a user-focused approach.
               </p>
 
-              {/* Personal approach */}
+              {/* Company Approach */}
               <div className="mt-8 border-l-2 border-cyan-500 pl-5">
                 <p className="text-lg font-medium leading-7 text-slate-800 dark:text-slate-200">
-                  Good development is more than writing code.
-                  It&apos;s about understanding people and solving problems.
+                  Great digital experiences start with understanding the
+                  problem, designing with purpose, and building with care.
                 </p>
               </div>
 
               {/* Technologies */}
               <div className="mt-8">
                 <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                  TECHNOLOGIES I WORK WITH
+                  OUR TECHNOLOGY STACK
                 </p>
 
                 <div className="flex flex-wrap gap-x-5 gap-y-3">
@@ -148,7 +147,7 @@ export default function About() {
                   href="#projects"
                   className="group inline-flex items-center gap-2 bg-slate-900 px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-cyan-700 dark:bg-cyan-300 dark:text-slate-950 dark:hover:bg-cyan-200"
                 >
-                  Explore my work
+                  Explore our work
                   <ArrowUpRight
                     size={17}
                     className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -159,7 +158,7 @@ export default function About() {
                   href="#contact"
                   className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition-colors hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-300"
                 >
-                  Let&apos;s connect
+                  Start a conversation
                   <ArrowDownRight
                     size={17}
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"
