@@ -34,7 +34,7 @@ export default function ProjectCard({
         className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-4 dark:focus-visible:ring-offset-slate-950"
       >
         {/* Preview */}
-        <div className="relative aspect-[5/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-slate-900">
+        <div className="relative aspect-[5/3] overflow-hiddenborder border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-slate-900">
           <ProjectPreview project={project} />
 
           <span className="absolute left-4 top-4 rounded-full border border-white/30 bg-slate-950/60 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md">

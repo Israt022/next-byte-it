@@ -63,7 +63,7 @@ export default function Projects() {
           </div>
 
           <div className="flex items-center justify-between gap-5 md:justify-end">
-            <Link
+            {/* <Link
               href="/projects"
               className="group inline-flex w-fit shrink-0 items-center gap-2 border-b border-slate-300 pb-2 text-sm font-semibold text-slate-800 transition-colors hover:border-cyan-500 hover:text-cyan-700 dark:border-white/20 dark:text-white dark:hover:border-cyan-300 dark:hover:text-cyan-300"
             >
@@ -72,7 +72,7 @@ export default function Projects() {
                 size={17}
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </Link>
+            </Link> */}
 
             {/* Slider Controls */}
             <div className="flex shrink-0 items-center gap-2">

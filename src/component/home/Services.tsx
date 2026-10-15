@@ -152,10 +152,10 @@ export default function Services() {
             >
               <Link
                 href={service.href}
-                className="group flex h-full min-h-[220px] flex-col rounded-xl border border-slate-200 bg-white p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-slate-900/5 sm:min-h-[225px] sm:p-5 dark:border-white/10 dark:bg-slate-900/70 dark:hover:border-cyan-300/40 dark:hover:shadow-black/20"
+                className="group flex h-full min-h-[220px] flex-col border border-slate-200 bg-white p-5 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-slate-900/5 sm:min-h-[225px] sm:p-5 dark:border-white/10 dark:bg-slate-900/70 dark:hover:border-cyan-300/40 dark:hover:shadow-black/20"
               >
                 <div className="flex items-center justify-between">
-                  <span className="grid h-10 w-10 place-items-center rounded-lg bg-cyan-50 text-cyan-700 transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-white dark:bg-cyan-300/10 dark:text-cyan-300 dark:group-hover:bg-cyan-300 dark:group-hover:text-slate-950">
+                  <span className="grid h-10 w-10 place-items-center  bg-cyan-50 text-cyan-700 transition-colors duration-300 group-hover:bg-cyan-500 group-hover:text-white dark:bg-cyan-300/10 dark:text-cyan-300 dark:group-hover:bg-cyan-300 dark:group-hover:text-slate-950">
                     {service.icon}
                   </span>
 
