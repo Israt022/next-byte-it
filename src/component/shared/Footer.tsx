@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 const BRAND = "NextByteIT";
 
@@ -17,72 +18,95 @@ const socials = [
 ];
 
 const linkClass =
-  "text-slate-600 transition-colors hover:text-indigo-600 focus-visible:text-indigo-600 focus-visible:outline-none dark:text-slate-400 dark:hover:text-cyan-300 dark:focus-visible:text-cyan-300";
+  "group inline-flex items-center gap-2 text-[15px] text-slate-600 transition-colors duration-200 hover:text-indigo-600 focus-visible:text-indigo-600 focus-visible:outline-none dark:text-slate-400 dark:hover:text-cyan-300 dark:focus-visible:text-cyan-300";
 
 const Footer = () => {
   return (
     <footer className="relative isolate overflow-hidden border-t border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-slate-950">
-      {/* Background: soft glow */}
+      {/* Background Glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_100%,rgba(99,102,241,0.18),transparent_70%),radial-gradient(40%_40%_at_85%_100%,rgba(34,211,238,0.14),transparent_70%)] dark:bg-[radial-gradient(60%_50%_at_50%_100%,rgba(99,102,241,0.28),transparent_70%),radial-gradient(40%_40%_at_85%_100%,rgba(34,211,238,0.20),transparent_70%)]"
       />
 
+      {/* Background Wordmark */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-50 -z-10 select-none whitespace-nowrap text-center text-[17vw] font-extrabold leading-none tracking-tighter text-transparent bg-gradient-to-b from-indigo-500/25 via-indigo-500/10 to-transparent bg-clip-text translate-y-[8%] dark:from-cyan-300/25 dark:via-indigo-400/10"
+        className="pointer-events-none absolute inset-x-0 bottom-50 -z-10 translate-y-[8%] select-none whitespace-nowrap bg-gradient-to-b from-indigo-500/25 via-indigo-500/10 to-transparent bg-clip-text text-center text-[17vw] font-extrabold leading-none tracking-tighter text-transparent dark:from-cyan-300/25 dark:via-indigo-400/10"
       >
         {BRAND}
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Link columns */}
-        <div className="grid grid-cols-2 gap-10 pb-24 pt-16 sm:grid-cols-3 sm:pb-40 sm:pt-20">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 pb-24 pt-16 sm:grid-cols-3 sm:gap-x-12 sm:pb-40 sm:pt-20 lg:gap-x-20">
+          {/* Brand Section */}
           <div className="col-span-2 sm:col-span-1">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-base font-semibold tracking-tight text-slate-900 dark:text-white"
-            >
-              <span className="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-indigo-500 to-cyan-400 font-mono text-xs font-bold text-white">
-                {"</>"}
-              </span>
-              {BRAND}
-            </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              Web, mobile and cloud software, designed and built for growing
-              businesses.
+            <Logo />
+
+            <p className="mt-5 max-w-xs text-[15px] leading-7 text-slate-600 dark:text-slate-400">
+              We design and build thoughtful digital experiences, from modern
+              websites to scalable software solutions.
             </p>
+
+            <Link
+              href="#contact"
+              className="group mt-6 inline-flex items-center gap-2 border-b border-indigo-500/40 pb-1 text-sm font-semibold text-slate-900 transition-colors hover:border-indigo-600 hover:text-indigo-600 dark:border-cyan-300/40 dark:text-white dark:hover:border-cyan-300 dark:hover:text-cyan-300"
+            >
+              Let&apos;s work together
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
           </div>
 
-          <nav aria-label="Footer">
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
-              Pages
+          {/* Navigation Links */}
+          <nav aria-label="Footer navigation">
+            <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
+              Explore
             </h3>
-            <ul className="mt-4 space-y-3 text-sm">
-              {navigate.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className={linkClass}>
-                    {l.label}
+
+            <ul className="mt-5 space-y-4">
+              {navigate.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    <span
+                      aria-hidden="true"
+                      className="h-px w-0 bg-indigo-500 transition-all duration-200 group-hover:w-3 dark:bg-cyan-300"
+                    />
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
+          {/* Social Links */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
-              Find us
+            <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
+              Connect
             </h3>
-            <ul className="mt-4 space-y-3 text-sm">
-              {socials.map((s) => (
-                <li key={s.label}>
+
+            <ul className="mt-5 space-y-4">
+              {socials.map((social) => (
+                <li key={social.label}>
                   <a
-                    href={s.href}
+                    href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={linkClass}
                   >
-                    {s.label}
+                    {social.label}
+
+                    <span
+                      aria-hidden="true"
+                      className="text-xs opacity-50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                    >
+                      ↗
+                    </span>
                   </a>
                 </li>
               ))}
@@ -90,20 +114,26 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-col items-start justify-between gap-4 border-t border-slate-300/60 py-6 text-sm text-slate-600 sm:flex-row sm:items-center dark:border-white/10 dark:text-slate-400">
-          <p>
+        {/* Bottom Bar */}
+        <div className="flex flex-col items-start justify-between gap-5 border-t border-slate-300/60 py-6 text-sm text-slate-600 sm:flex-row sm:items-center dark:border-white/10 dark:text-slate-400">
+          <p className="leading-relaxed">
             &copy; {new Date().getFullYear()} {BRAND}. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link href="/privacy" className={linkClass}>
               Privacy
             </Link>
+
             <Link href="/terms" className={linkClass}>
               Terms
             </Link>
-            <a href="#" className={linkClass}>
+
+            <a href="#top" className={linkClass}>
               Back to top
+              <span aria-hidden="true" className="text-xs">
+                ↑
+              </span>
             </a>
           </div>
         </div>
